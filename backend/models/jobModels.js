@@ -16,5 +16,5 @@ const JobSchema = new mongoose.Schema({
     skills: [{type:String}]
 });
 
-const Job = mongoose.model(Jobs,JobSchema );
+const Job = mongoose.model("jobs",JobSchema );
 export default Job;
