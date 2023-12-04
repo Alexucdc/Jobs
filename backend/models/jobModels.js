@@ -4,16 +4,14 @@ const JobSchema = new mongoose.Schema({
     title: {type: String},
     date: {type:String},
     description: { type: String},
-    tags: [{type:String}],
     hourly_rate: {type:Number},
-    client: {
-        name:{ type:String},
-        location: {type:String},
-        employees_count: {type:Number}
-    },
+    name:{ type:String},
+    location: {type:String},
+    employees_count: {type:Number},
     experience: {type:String},
     project_type: {type:String},
-    skills: [{type:String}]
+    skills: {type:String},
+    idUser: {type: mongoose.Types.ObjectId, ref: "jobs"}
 });
 
 const Job = mongoose.model("jobs",JobSchema );

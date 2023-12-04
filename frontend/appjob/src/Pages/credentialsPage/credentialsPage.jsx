@@ -1,6 +1,8 @@
+/* eslint-disable eqeqeq */
 import { useState} from 'react';
 import axios from 'axios';
 import { useNavigate }  from 'react-router-dom';
+import  "./credentials.css"
 
 export const CredentialsPage =(props) =>{
 
@@ -58,7 +60,7 @@ export const CredentialsPage =(props) =>{
             var result = await axios.post("http://localhost:8000/api/user/login", obj);
             localStorage.setItem("jwt", result.data);
             localStorage.setItem("isLogged", true);
-            navigate("/");
+            navigate("/admin");
         }catch(e){
             alert("Usuario o contraseña invalidos");
         }
@@ -69,9 +71,12 @@ export const CredentialsPage =(props) =>{
 
 
     return (
-        <div>
-            <h1>Register</h1>
+        
+        <div className='General'>
+            <h1 className='title'>Find Job</h1>
+            <h2>Register</h2>
             <div>
+                
                 <label>Name</label>
                 <br />
                 <input type="text" value={nameRegister} onChange={(e) => setNameRegister(e.target.value)}/>

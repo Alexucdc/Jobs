@@ -1,8 +1,10 @@
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ListPage } from './Pages/listPage/listPage'
 import { CreatePage } from './Pages/createPage/createPage';
-import { ListPage } from './Pages/listPage/listPage';
+import { AdminPage } from './Pages/adminPage/adminPage';
 import { CredentialsPage } from './Pages/credentialsPage/credentialsPage';
-import { UpdatePage } from './Pages/updatePage/updatePage';
+
+
 
 function App() {
   return (
@@ -10,9 +12,10 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<ListPage></ListPage>}></Route>
+        <Route path='/admin' element={<AdminPage></AdminPage>}></Route>
         <Route path='/new' element={<CreatePage></CreatePage>}></Route>
         <Route path='/credentials' element={<CredentialsPage></CredentialsPage>}></Route>
-        <Route path='/update/:id' element={<UpdatePage></UpdatePage>}></Route>
+        
       </Routes>
       </BrowserRouter>
         

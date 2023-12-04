@@ -1,0 +1,51 @@
+.job {
+    display: inline-block;
+    background-color: #e3dbfa;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5%;
+    width: 350px;
+    text-align: center;
+    box-shadow: 5px 5px 10px #e3dbfa;
+    
+}
+.job-container {
+    
+    margin-top: 10px;
+}
+body {
+    
+    margin: 0px;
+}
+.Link {
+    
+    margin:  30px;
+    font-size: x-large;
+    
+}
+.title {
+    background-color: black;
+    color: white;
+    text-align: center;
+    
+    padding: 20px;
+    margin-top: 0px;
+}
+.job-main{
+    background-color: white;
+    display: inline-block;
+    border:  solid black 2px;
+    height: 550px;
+    border-radius: 5%;
+    margin: 10px;
+}
+button {
+    background-color: black;
+    color: white;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #888888;
+    margin: 20px;
+}
