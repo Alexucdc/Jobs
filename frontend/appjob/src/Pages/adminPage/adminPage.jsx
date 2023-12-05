@@ -30,21 +30,7 @@ export const AdminPage = (props) => {
         var result = await axios.get("http://localhost:8000/api/Jobs/get", config);
         setListJobs(result.data);
     }
-    const deleteJob = async (idJob, index) => {
-        var jwt = localStorage.getItem("jwt");
-        var result = await axios.delete("http://localhost:8000/api/delete/" + idJob,{
-            headers: {"Authorization": jwt
-        }
-    });
-    if(result.status == 200){
-        var listJobsTemp = listJobs.filter((job, i) => i != index);
-        setListJobs(listJobsTemp);
-        alert("Se ha eliminado correctamente");
-    } else {
-        alert("Hubo un error");
-    }
-}
-  
+
 
     const goToViewJob = () => {
         navigate("/" );
@@ -55,7 +41,16 @@ export const AdminPage = (props) => {
         navigate("/new" );
     }
 
-
+    const deleteJob = async (idJob) =>{
+        var response = await axios.delete ("http://localhost:8000/api/jobs/delete/" + idJob);
+        if (response.status==200){
+            alert ("Deleted successfully");
+            var listJobsTemp = listJobs.filter((job) => job._id != idJob);
+            setListJobs(listJobsTemp);
+        } else {
+            alert("Ups! An error occurred while deleting the item");
+        }
+    }
     return (
         <div>
             <h1 className='title'>Find Job</h1>
